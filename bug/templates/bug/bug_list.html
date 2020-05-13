@@ -1,0 +1,28 @@
+{% extends parent_template|default:"bug/base_bug.html" %}
+
+{% block title %}
+{ { block.super } } - Bugs
+{% endblock %}
+
+{% load staticfiles %}
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'bug/style.css' %}"/>
+{% endblock %}
+
+{% block content %}
+    <h2>Bug List</h2>
+    <dl><table border="2" cellpadding="8">
+        <caption><h3>Bug List</h3></caption>
+        <tr>
+            <td>Bug Name</td>
+            <td>Price</td>
+        </tr>
+        {% for bug in bugs %}
+        <tr>
+            <td>{{ bug.bug_name }}</td>
+            <td>{{ bug.bug_value }}</td>
+            </td>
+        </tr>
+        {% endfor %}
+    </table></dl>
+{% endblock %}

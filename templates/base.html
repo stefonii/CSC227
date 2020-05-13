@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>
+            {% block title %}
+                Animal Crossing: New Horizons Creature Checklist
+            {% endblock %}
+            {% block css %}
+            {% endblock %}
+        </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <div>
+            <header>
+                <h1>Animal Crossing: New Horizons Creature Checklist</h1>
+            </header>
+            <nav>
+                <ul>
+                    <li><a href="{% url 'fish_list' %}">
+                        Fishes</a></li>
+                    <li><a href="{% url 'bug_list' %}">
+                        Bugs
+                    </a></li>
+                </ul>
+            </nav>
+            <main>
+                {% block content %}
+                    This is where the hyperlink lists are displayed
+                {% endblock %}
+            </main>
+        </div>
+    </body>
+</html>
